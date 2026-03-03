@@ -8,13 +8,14 @@ import time
 import asyncio
 from pathlib import Path
 from typing import Dict, List, Any
-
+from dotenv import load_dotenv
 import requests
 from pageindex import PageIndexClient
 import pageindex.utils as utils
 from openai import AsyncOpenAI
 
 
+load_dotenv()
 
 PAGEINDEX_API_KEY = os.getenv("PAGEINDEX_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -22,7 +23,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not PAGEINDEX_API_KEY or not OPENAI_API_KEY:
     raise ValueError("Missing API keys. Set PAGEINDEX_API_KEY and OPENAI_API_KEY")
 
-PDF_URL = "https://arxiv.org/pdf/1706.03762"
+PDF_URL = "https://arxiv.org/pdf/1706.03762.pdf"
 DOWNLOAD_DIR = Path("./data")
 DOWNLOAD_DIR.mkdir(exist_ok=True)
 

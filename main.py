@@ -22,7 +22,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not PAGEINDEX_API_KEY or not OPENAI_API_KEY:
     raise ValueError("Missing API keys. Set PAGEINDEX_API_KEY and OPENAI_API_KEY")
 
-PDF_URL = "https://arxiv.org/pdf/2501.12948.pdf"
+PDF_URL = "https://arxiv.org/pdf/1706.03762"
 DOWNLOAD_DIR = Path("./data")
 DOWNLOAD_DIR.mkdir(exist_ok=True)
 
@@ -194,5 +194,5 @@ async def runPipeline(query: str) -> None:
 
 if __name__ == "__main__":
     asyncio.run(
-        runPipeline("What are the conclusions in this document?")
+        runPipeline("What is Self-Attention?")
     )

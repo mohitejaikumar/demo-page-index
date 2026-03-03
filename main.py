@@ -1,4 +1,3 @@
-# simple_pageindex_rag_refactored.py
 # Python 3.10+
 # pip install pageindex openai requests
 
